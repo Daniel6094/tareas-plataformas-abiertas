@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <title>Ejemplo de consultas a la API</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+     
+      <hr>
+      <section aria-labelledby="query-title">
+        <h2 id="query-title">Ejemplo: listar productos</h2>
+        <form id="connection-form">
+          <label>URL base de la API
+            <input id="api-url" type="url" required value="http://127.0.0.1:5000/api/v1" placeholder="http://127.0.0.1:5000/api/v1">
+          </label>
+          <label>Token
+            <input id="api-token" type="password" required autocomplete="off" placeholder="Token de autenticación">
+          </label>
+          <button type="submit" id="connect-button">Probar conexión</button>
+        </form>
+        <p id="connection-status" role="status">Estado: sin comprobar</p>
+
+        <div class="query-controls">
+          <label for="endpoint">Consulta</label>
+          <select id="endpoint">
+            <option value="/productos/">Listar productos</option>
+            <option value="/marcas/">Listar marcas</option>
+            <option value="/productos/reportes/stock-restante">Reporte de stock</option>
+            <option value="/marcas/reportes/marcas-con-ventas">Marcas con ventas</option>
+            <option value="/marcas/reportes/top-5-marcas">Top 5 de marcas</option>
+          </select>
+          <button type="button" id="query-button" disabled>Consultar</button>
+        </div>
+
+        <div class="response-section">
+          <p id="response-meta">Aún no se ha realizado ninguna consulta.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr id="response-head"></tr></thead>
+              <tbody id="response-body" aria-live="polite">
+                <tr><td class="empty-state">La respuesta de la API aparecerá aquí.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

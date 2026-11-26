@@ -1,0 +1,54 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 18px 24px;
+  color: #111;
+  background: #fff;
+  font: 15px Arial, sans-serif;
+}
+
+main {
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+h1 { margin: 0 0 18px; font-size: 30px; }
+h2 { margin: 0 0 18px; font-size: 27px; }
+.flow { margin: 0 0 28px; padding-left: 46px; line-height: 1.45; }
+code { color: #17813b; }
+hr { margin: 24px 4px 38px; border: 0; border-top: 1px solid #999; }
+
+section > h2 { margin-bottom: 20px; }
+form { display: grid; grid-template-columns: minmax(200px, 1fr) minmax(180px, 1fr) auto; align-items: end; gap: 12px; }
+label { display: grid; gap: 6px; font-size: 13px; }
+input, select, button { min-height: 36px; padding: 7px 9px; border: 1px solid #999; border-radius: 2px; font: inherit; }
+input, select { width: 100%; background: #fff; }
+button { color: #fff; border-color: #07516a; background: #07516a; cursor: pointer; }
+button:disabled { color: #555; border-color: #ccc; background: #eee; cursor: not-allowed; }
+
+#connection-status { margin: 14px 0 22px; font-weight: 600; }
+#connection-status[data-state="online"] { color: #28633a; }
+#connection-status[data-state="offline"] { color: #9c2727; }
+#connection-status[data-state="checking"] { color: #805500; }
+.query-controls { display: flex; align-items: center; gap: 10px; }
+.query-controls label { display: block; }
+.query-controls select { flex: 1; }
+.response-section { margin-top: 20px; }
+#response-meta { margin: 0 0 8px; color: #555; font-size: 13px; }
+.table-wrap { width: 100%; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+th, td { min-width: 90px; padding: 8px; border: 1px solid #ddd; font-size: 12px; }
+th { color: #fff; background: #07516a; font-weight: 600; }
+td { overflow-wrap: anywhere; }
+tbody tr:nth-child(even) { background: #f7f7f7; }
+.empty-state { padding: 18px; color: #555; text-align: center; }
+
+@media (max-width: 650px) {
+  body { padding: 16px; }
+  h1 { font-size: 26px; }
+  h2 { font-size: 23px; }
+  form { grid-template-columns: 1fr; }
+  .query-controls { align-items: stretch; flex-wrap: wrap; }
+  .query-controls label { width: 100%; }
+}
