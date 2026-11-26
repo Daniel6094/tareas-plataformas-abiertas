@@ -24,7 +24,7 @@ def token_required(f):
 
 def create_app():
     app = Flask(__name__)
-    app.config["MONGO_URI"] = "mongodb+srv://danielvegav6094_db_user:1234@cluster0.byjrbup.mongodb.net/pc_gaming_db?retryWrites=true&w=majority"
+    app.config["MONGO_URI"] = 
     
     mongo.init_app(app)
 
